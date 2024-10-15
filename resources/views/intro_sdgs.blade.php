@@ -46,9 +46,16 @@
 
         li {
             background: #e7f3fe;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 4px;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        li:hover {
+            transform: translateY(-2px);
+            background: #d0e6ff;
         }
 
         .description {
