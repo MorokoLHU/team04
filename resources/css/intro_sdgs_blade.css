@@ -1,0 +1,158 @@
+
+       /* 基本樣式，讓每個 section 佔據整個屏幕高度 */
+       body, html  {
+        font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體";
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        scrollbar-width: none;
+        /* 平滑滾動 */
+
+      }
+      footer{
+        float: inline-end;
+      }
+      header {
+        position:sticky;
+        top:0;
+        margin: 0;
+        padding: 0;
+        height: 7vh;
+        text-align: left;
+        background-color: #176902;
+        color:antiquewhite;
+      }
+      
+      h1{
+        top:-25%;
+        margin: auto;
+        text-align: center;
+        position: relative;
+        display: inline;
+      }
+      
+      .sectionimg{
+        margin-top: auto;
+        margin-bottom: auto;
+        height:60% ;
+        width: 40%;
+        display: block;
+        float: left;
+        text-align: center;
+        border: 2pt solid red;
+      }
+      
+      .article{
+        font-weight: bold;
+        text-align: center;
+        margin:auto 0px;
+        padding-left: 1em;
+        width: 45%;
+      }
+      .article p{
+        font-size: 20px;
+      }
+      .article h2{
+        font-style: italic;
+        color: rgb(51, 32, 32);
+      }
+      
+      
+      .contiar {
+        
+        scroll-snap-type: y mandatory;
+        overflow-x: scroll;
+        height: 93vh;
+        scrollbar-width: none;
+        
+      }
+      .container::-webkit-scrollbar {
+        display: none; /* Chrome 和 Safari 隱藏滾動條 */
+      }
+      .box{
+        width: 10%;
+        
+        right: 0;
+        height: 100vh;
+        color:black;
+        border: px solid black;
+        position: fixed;
+        overflow: hidden;
+        opacity: 1;
+        
+      }
+      .box:hover .curve{
+        right:0px;
+      }
+      .box:hover .arrow{
+        opacity: 0;
+      }
+      .curve {
+        position: absolute;
+        top: 0;
+        right: -45px;
+        width: 100%; /* 弧線的寬度 */
+        height: 100vh; /* 與整個視窗等高 */
+        background: rgba(198, 243, 211, 0.8);
+        /* 弧線的顏色 */ 
+        border-top-left-radius: 20%; /* 上方的圓角 */
+        opacity: 1;
+        transition: all 0.3s;
+      }
+      .arrow {
+        position: absolute;
+        top: 50%;
+        right: 80%;
+        width: 12%; /* 三角形的寬度 */
+        height: 50px; /* 保持與視窗高度一致 */
+        background: rgba(40, 45, 40, 0.8); /* 三角形的顏色 */
+        clip-path: polygon(100% 0, 0 50%, 100% 100%); /* 剪切成三角形 */
+        transition: opacity 0.2s ease-in-out;
+      }
+      .section {
+        background-image: url('../Img/sectionbg.png');
+        border:0px solid black ;
+        padding: 10px;
+        height: 93vh;
+        scroll-snap-align: start;
+        display: flex;
+        z-index: 1000;
+        align-items:flex-start;
+        font-size: 2rem;
+        transition: opacity 0.5s ease-in-out;
+
+      }
+      #section18{height:1em; background-color: black;color: antiquewhite;}
+      #section18 a{text-decoration:none}
+      
+    
+      .scroll-button {
+        position: fixed;
+        top: 50%;
+        right: 5px; /* 距離右側的距離 */
+        padding: 10px 20px;
+        background-color: #144623;
+        color: white;
+        cursor: pointer;
+        margin: 10px 0; /* 按鈕間距 */
+        transform: translateY(-50%); /* 垂直居中 */
+        border-top-left-radius: 50%; /* 上方的圓角 */
+        border-bottom-left-radius:50%; /* 上方的圓角 */
+        border-top-right-radius:20%;
+        opacity: 0; /* 初始隱藏 */
+        transition: opacity 0.3s ease;
+      }
+
+
+    body:hover .scroll-button {
+        transform: translateY(0); /* 當滑鼠移到右側時顯示按鈕 */
+      }
+    .curve:hover {
+        background: rgb(198, 243, 211);
+
+    }
+    .scroll-button:hover{
+        background-color: #2a9249;
+        
+    }
+    
