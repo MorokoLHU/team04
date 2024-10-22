@@ -4,11 +4,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>可持續發展目標 (SDGs)</title>
-    <link rel="stylesheet"  href="../css/intro_sdgs_blade.css">
+    <style>
+      
+       /* 基本樣式，讓每個 section 佔據整個屏幕高度 */
+       body, html  {
+        font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體";
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        scrollbar-width: none;
+        /* 平滑滾動 */
+
+      }
+      footer{
+        float: inline-end;
+      }
+      header {
+        position:sticky;
+        top:0;
+        margin: 0;
+        padding: 0;
+        height: 7vh;
+        text-align: left;
+        background-color: #176902;
+        color:antiquewhite;
+      }
+      
+      h1{
+        top:-25%;
+        margin: auto;
+        text-align: center;
+        position: relative;
+        display: inline;
+      }
+      
+      .sectionimg{
+        margin-top: auto;
+        margin-bottom: auto;
+        height:60% ;
+        width: 40%;
+        display: block;
+        float: left;
+        text-align: center;
+        border: 2pt solid red;
+      }
+      
+      .article{
+        font-weight: bold;
+        text-align: center;
+        margin:auto 0px;
+        padding-left: 1em;
+        width: 45%;
+      }
+      .article p{
+        font-size: 20px;
+      }
+      .article h2{
+        font-style: italic;
+        color: rgb(51, 32, 32);
+      }
+      
+      
+      .contiar {
+        
+        scroll-snap-type: y mandatory;
+        overflow-x: scroll;
+        height: 93vh;
+        scrollbar-width: none;
+        
+      }
+      .container::-webkit-scrollbar {
+        display: none; /* Chrome 和 Safari 隱藏滾動條 */
+      }
+      .box{
+        width: 10%;
+        
+        right: 0;
+        height: 100vh;
+        color:black;
+        border: px solid black;
+        position: fixed;
+        overflow: hidden;
+        opacity: 1;
+        
+      }
+      .box:hover .curve{
+        right:0px;
+      }
+      .box:hover .arrow{
+        opacity: 0;
+      }
+      .curve {
+        position: absolute;
+        top: 0;
+        right: -45px;
+        width: 100%; /* 弧線的寬度 */
+        height: 100vh; /* 與整個視窗等高 */
+        background: rgba(198, 243, 211, 0.8);
+        /* 弧線的顏色 */ 
+        border-top-left-radius: 20%; /* 上方的圓角 */
+        opacity: 1;
+        transition: all 0.3s;
+      }
+      .arrow {
+        position: absolute;
+        top: 50%;
+        right: 80%;
+        width: 12%; /* 三角形的寬度 */
+        height: 50px; /* 保持與視窗高度一致 */
+        background: rgba(40, 45, 40, 0.8); /* 三角形的顏色 */
+        clip-path: polygon(100% 0, 0 50%, 100% 100%); /* 剪切成三角形 */
+        transition: opacity 0.2s ease-in-out;
+      }
+      .section {
+        background-image: url('../Img/sectionbg.png');
+        border:0px solid black ;
+        padding: 10px;
+        height: 93vh;
+        scroll-snap-align: start;
+        display: flex;
+        z-index: 1000;
+        align-items:flex-start;
+        font-size: 2rem;
+        transition: opacity 0.5s ease-in-out;
+
+      }
+      #section18{height:1em; background-color: black;color: antiquewhite;}
+      #section18 a{text-decoration:none}
+      .scroll-button {
+        position: fixed;
+        top: 50%;
+        right: 5px; /* 距離右側的距離 */
+        padding: 10px 20px;
+        background-color: #144623;
+        color: white;
+        cursor: pointer;
+        margin: 10px 0; /* 按鈕間距 */
+        transform: translateY(-50%); /* 垂直居中 */
+        border-top-left-radius: 50%; /* 上方的圓角 */
+        border-bottom-left-radius:50%; /* 上方的圓角 */
+        border-top-right-radius:20%;
+        opacity: 0; /* 初始隱藏 */
+        transition: opacity 0.3s ease;
+      }
+
+
+    body:hover .scroll-button {
+        transform: translateY(0); /* 當滑鼠移到右側時顯示按鈕 */
+      }
+    .curve:hover {
+        background: rgb(198, 243, 211);
+
+    }
+    .scroll-button:hover{
+        background-color: #2a9249;
+        
+    }
+    
+  </style>
 </head>
 <body>
     <header>
-      <img src="../Img/SDGS_logo.jpg" height="100%" >
+      <img src="{{ URL::asset('Img/SDGS_logo.jpg') }}" height="100%"   >
+      
         <h1>聯合國可持續發展目標 (SDGs) Intro</h1>
     </header>
     
@@ -38,7 +196,7 @@
     </div>
     
     <div class="section" id="section1" >
-      <img class="sectionimg" src="../Img/SDGS_01.jpg"  >
+      <img class="sectionimg" src="{{ URL::asset('Img/SDGS_01.jpg') }}"  >
       <div class="article">
         <h2>消除貧窮</h2>
         <p>
@@ -54,7 +212,7 @@
       </div>
     </div>
     <div class="section" id="section2">
-      <img class="sectionimg" src="../Img/SDGS_02.jpg"  >
+      <img class="sectionimg" src="{{ URL::asset('Img/SDGS_02.jpg') }}"   >
       <div class="article">
         <h2>終結飢餓</h2>
         <p>
@@ -73,7 +231,7 @@
 
     </div>
     <div class="section" id="section3">
-      <img class="sectionimg" src="../Img/SDGS_03.jpg"  >
+      <img class="sectionimg" src="{{ URL::asset('Img/SDGS_03.jpg') }}"   >
       
       <div class="article">
         <h2>健康與福祉</h2>
@@ -90,7 +248,7 @@
     </div>
     
     <div class="section" id="section4">
-      <img class="sectionimg" src="../Img/SDGS_04.jpg"  >
+      <img class="sectionimg" src="{{ URL::asset('Img/SDGS_04.jpg') }}"   >
       
       <div class="article">
         <h2>優質教育</h2>
@@ -108,7 +266,7 @@
         </div>    
     </div>
     <div class="section" id="section5">
-      <img class="sectionimg" src="../Img/SDGS_05.jpg"  >
+      <img class="sectionimg" src="{{ URL::asset('Img/SDGS_05.jpg') }}"   >
       
       <div class="article">
         <h2>性別平等</h2>
@@ -127,7 +285,7 @@
         </div>
     </div>
     <div class="section" id="section6">
-      <img class="sectionimg" src="../Img/SDGS_06.jpg"  >
+      <img class="sectionimg" src="{{ URL::asset('Img/SDGS_06.jpg') }}"   >
       
       <div class="article">
         <h2>淨水與衛生</h2>
@@ -148,7 +306,7 @@
     </div>
 
     <div class="section" id="section7">
-      <img class="sectionimg" src="../Img/SDGS_07.jpg"  >
+      <img class="sectionimg" src="{{ URL::asset('Img/SDGS_07.jpg') }}"   >
       
       <div class="article">
         <h2>可負擔的永續能源</h2>
@@ -168,7 +326,7 @@
         </div>
     </div>
     <div class="section" id="section8">
-      <img class="sectionimg" src="../Img/SDGS_08.jpg"  >
+      <img class="sectionimg" src="{{ URL::asset('Img/SDGS_08.jpg') }}"   >
       
       <div class="article">
         <h2>就業與經濟成長</h2>
@@ -188,7 +346,7 @@
         </div>
       </div>
     <div class="section" id="section9">
-        <img class="sectionimg" src="../Img/SDGS_09.jpg"  >
+        <img class="sectionimg" src="{{ URL::asset('Img/SDGS_09.jpg') }}"   >
         
         <div class="article">
           <h2>永續工業與基礎建設</h2>
@@ -206,7 +364,7 @@
         </div>
     </div>
     <div class="section" id="section10">
-      <img class="sectionimg" src="../Img/SDGS_10.jpg"  >
+      <img class="sectionimg" src="{{ URL::asset('Img/SDGS_10.jpg') }}"   >
       
       <div class="article">
         <h2>減少國內及國家間不平等</h2>
@@ -224,7 +382,7 @@
         </div>
       </div>
     <div class="section" id="section11">
-      <img class="sectionimg" src="../Img/SDGS_11.jpg"  >
+      <img class="sectionimg" src="{{ URL::asset('Img/SDGS_11.jpg') }}"   >
       
       <div class="article">
         <h2>永續城鄉</h2>
@@ -241,7 +399,7 @@
         </div>
       </div>
     <div class="section" id="section12">
-      <img class="sectionimg" src="../Img/SDGS_12.jpg"  >
+      <img class="sectionimg" src="{{ URL::asset('Img/SDGS_12.jpg') }}"   >
       
       <div class="article">
         <h2>責任消費與生產</h2>
@@ -258,7 +416,7 @@
       </div>
 
     <div class="section" id="section13">
-      <img class="sectionimg" src="../Img/SDGS_13.jpg"  >
+      <img class="sectionimg" src="{{ URL::asset('Img/SDGS_13.jpg') }}"   >
       
       <div class="article">
         <h2>氣候行動</h2>
@@ -276,7 +434,7 @@
         </div>
       </div>
     <div class="section" id="section14">
-      <img class="sectionimg" src="../Img/SDGS_14.jpg"  >
+      <img class="sectionimg" src="{{ URL::asset('Img/SDGS_14.jpg') }}"   >
       
       <div class="article">
         <h2>永續海洋與保育</h2>
@@ -294,7 +452,7 @@
         </div>
       </div>
     <div class="section" id="section15">
-      <img class="sectionimg" src="../Img/SDGS_15.jpg"  >
+      <img class="sectionimg" src="{{ URL::asset('Img/SDGS_15.jpg') }}"   >
       
       <div class="article">
         <h2>陸地生態</h2>
@@ -315,7 +473,7 @@
       </div>
 
     <div class="section" id="section16">
-      <img class="sectionimg" src="../Img/SDGS_16.jpg"  >
+      <img class="sectionimg" src="{{ URL::asset('Img/SDGS_16.jpg') }}"   >
       
       <div class="article">
         <h2>制度的正義與和平</h2>
@@ -333,7 +491,7 @@
         </div>
       </div>
     <div class="section" id="section17">
-      <img class="sectionimg" src="../Img/SDGS_17.jpg"  >
+      <img class="sectionimg" src="{{ URL::asset('Img/SDGS_17.jpg') }}"   >
       
       <div class="article">
         <h2>永續發展夥伴關係</h2>
