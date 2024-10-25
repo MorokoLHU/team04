@@ -117,7 +117,7 @@
         transition: opacity 0.2s ease-in-out;
       }
       .section {
-        background-image: url({{URL::asset('Img/sectionbg.png')}});
+        background-image: url('../Img/sectionbg.png');
         border:0px solid black ;
         padding: 10px;
         height: 93vh;
