@@ -8,7 +8,7 @@ class CreateDataSeeder extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * visual_forest
      * @return void
      */
     public function up()

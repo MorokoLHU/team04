@@ -15,11 +15,11 @@ class CreateDataSeeder extends Seeder
      */
     public function run()
     {
-        $firstNames = array('稻', '翠', '鳥', '菜', '香', 
+        $firstNames = array('稻', '桐','谷','和','人', '翠', '鳥', '菜', '香', 
     '林', '草', '豐', '花', '玉', 
     '果', '田', '農', '瑞', '綠', 
     '星', '水', '晨', '春', '秋');
-        $lastNames = array('田', '谷', '鳴', '園', '畔', 
+        $lastNames = array('田', '桐','谷','和','人', '鳴', '園', '畔', 
     '泉', '坪', '禾', '香', '米', 
     '園', '野', '莊', '穗', '地', 
     '田', '岸', '曦', '風', '實');  
@@ -35,7 +35,7 @@ class CreateDataSeeder extends Seeder
             
             $random_datetime = Carbon::now()->subMinutes(rand(1, 55));
            
-            DB::table('visual_forest')->insert([
+            DB::table('forest_areas')->insert([
                 'farm_name' => $name,
                 'plain_forest_area_hectares' => $area_hectares1,
                 'public_forest_area_hectares' => $area_hectares2,
