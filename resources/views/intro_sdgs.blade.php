@@ -160,14 +160,28 @@
         background-color: #2a9249;
         
     }
-    
+    .button {
+            float: right;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #0992d1;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #0285a5;
+        }
   </style>
 </head>
 <body>
     <header>
       <img src="{{ URL::asset('Img/SDGS_logo.jpg') }}" height="100%"   >
       
-        <h1>聯合國可持續發展目標 (SDGs) Intro</h1>
+        <h1>聯合國可持續發展目標 (SDGs) Intro  </h1><a href="/" class="button">Back to MainPage</a>
     </header>
     
 <div class="contiar">

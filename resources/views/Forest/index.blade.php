@@ -7,6 +7,9 @@
     <title>Forest Data</title>
     <style>
         /* 通用樣式 */
+        body{
+            background-image: url({{URL::asset('Img/sectionbg.png')}});
+        }
         .wrapper {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
@@ -28,7 +31,8 @@
         /* 九宮格容器 */
         .forest-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 每行顯示三個條目 */
+            grid-template-columns: repeat(3, 1fr);
+            /* 每行顯示三個條目 */
             gap: 20px;
             padding: 20px;
         }
@@ -55,7 +59,7 @@
         }
 
         /* 標籤 */
-        .forest-entry p {
+        .forest-entry td {
             font-size: 16px;
             margin: 5px 0;
         }
@@ -69,31 +73,37 @@
         /* 小螢幕適配 */
         @media (max-width: 768px) {
             .forest-grid {
-                grid-template-columns: repeat(2, 1fr); /* 小螢幕顯示兩列 */
+                grid-template-columns: repeat(2, 1fr);
+                /* 小螢幕顯示兩列 */
             }
         }
 
         @media (max-width: 480px) {
             .forest-grid {
-                grid-template-columns: 1fr; /* 超小螢幕顯示一列 */
+                grid-template-columns: 1fr;
+                /* 超小螢幕顯示一列 */
             }
         }
-          /* 分頁控制區域 */
-          .pagination {
-            
+
+        /* 分頁控制區域 */
+        .pagination {
+
             text-align: center;
             margin-top: 20px;
         }
-        .pagination div{
-            
+
+        .pagination div {
+
             text-align: center;
             margin-top: -30px;
         }
-        .pagination .flex-1{
+
+        .pagination .flex-1 {
             display: none;
             text-align: center;
             margin-top: 20px;
         }
+
         .pagination svg {
             margin: -20px 0px;
             height: 100px;
@@ -101,6 +111,7 @@
             text-align: center;
             margin-top: 20px;
         }
+
         .pagination span {
             margin: -20px 0px;
             height: 100px;
@@ -108,9 +119,9 @@
             text-align: center;
             margin-top: 20px;
         }
-        .pagination .duration-150{
-            
-        }
+
+        .pagination .duration-150 {}
+
         .pagination button {
             padding: 10px 20px;
             margin: 0 5px;
@@ -125,24 +136,59 @@
         .pagination button:hover {
             background-color: #004d40;
         }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #1f7300;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #185b00;
+        }
     </style>
 </head>
 
 <body>
     <div class="wrapper">
-        <h1>🌲造林資料🌲</h1>
+        <a href="/" class="button">Back to MainPage</a>
+        <h1>🌲已知的造林資料統整🌲</h1>
 
         <!-- 九宮格顯示 -->
         <div class="forest-grid">
             @foreach ($forests as $forest)
                 <div class="forest-entry">
-                    <h2>{{ $forest->farm_name }}</h2>
-                    <p><strong>平原森林面積 (公頃):</strong> {{ $forest->plain_forest_area_hectares }}</p>
-                    <p><strong>公共森林面積 (公頃):</strong> {{ $forest->public_forest_area_hectares }}</p>
-                    <p><strong>自籌資金森林面積 (公頃):</strong> {{ $forest->self_funded_forest_area_hectares }}</p>
-                    <p><strong>生態森林公園面積 (公頃):</strong> {{ $forest->eco_forest_park_area_hectares }}</p>
-                    <p><strong>總面積 (公頃):</strong> {{ $forest->total_area_hectares }}</p>
+                    <table>
+
+                        <th>
+                            <h2>{{ $forest->farm_name }}<h2>
+                        </th>
+                        <tr>
+                            <th><strong>平原森林面積 (公頃):</strong></th>
+                            <th> {{ $forest->plain_forest_area_hectares }}</th>
+                        </tr>
+                        <tr>
+                            <th><strong>公共森林面積 (公頃):</strong> </th>
+                            <th>{{ $forest->public_forest_area_hectares }}</th>
+                        </tr>
+                        <tr>
+                            <th><strong>自籌資金森林面積 (公頃):</strong></th>
+                            <th>{{ $forest->self_funded_forest_area_hectares }}</th>
+                        </tr>
+                        <th><strong>生態森林公園面積 (公頃):</strong></th>
+                        <th>{{ $forest->eco_forest_park_area_hectares }}</th>
+                        </tr>
+                        <tr>
+                            <th><strong>總面積 (公頃):</strong></th>
+                            <th> {{ $forest->total_area_hectares }}</th>
+                        </tr>
+                    </table>
                     <div class="divider"></div>
+
                 </div>
             @endforeach
         </div>
@@ -150,8 +196,10 @@
             <!-- 顯示分頁的上一頁、下一頁等控制按鈕 -->
             {{ $forests->links() }}
         </div>
+        
+
     </div>
-    
+
 </body>
 
 </html>

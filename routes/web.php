@@ -15,10 +15,10 @@ use App\Http\Controllers\ForestController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Forest_Main');
 });
 Route::get('/sdgs', function () {
     return view('intro_sdgs');
 });
 
-Route::get('Forest', [ForestController::class,'index']);
+Route::get('forest', [ForestController::class,'index']);
