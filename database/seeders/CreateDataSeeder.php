@@ -23,7 +23,7 @@ class CreateDataSeeder extends Seeder
     '泉', '坪', '禾', '香', '米', 
     '園', '野', '莊', '穗', '地', 
     '田', '岸', '曦', '風', '實');  
-        for ($i=0; $i<20; $i++)
+        for ($i=0; $i<40; $i++)
         {
             $name = $firstNames[array_rand($firstNames)] . $lastNames[array_rand($lastNames)];
             

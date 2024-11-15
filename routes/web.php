@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ForestControlles;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,5 @@ Route::get('/', function () {
 Route::get('/sdgs', function () {
     return view('intro_sdgs');
 });
+
+Route::get('forest',[ForestControlles::class,'index']) ;
