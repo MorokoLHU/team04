@@ -46,7 +46,7 @@
         display: block;
         float: left;
         text-align: center;
-        border: 2pt solid red;
+        border: 0pt solid red;
       }
       
       .article{

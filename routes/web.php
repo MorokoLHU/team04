@@ -21,4 +21,4 @@ Route::get('/sdgs', function () {
     return view('intro_sdgs');
 });
 
-Route::get('forest', [ForestController::class,'index']);
+Route::get('/forest', [ForestController::class,'index']);
