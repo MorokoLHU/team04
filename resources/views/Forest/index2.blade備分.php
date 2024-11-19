@@ -7,27 +7,41 @@
     <title>Forest Data</title>
     <style>
         /* 通用樣式 */
-        body{
-            background-image: url({{URL::asset('Img/sectionbg.png')}});
+        body {
+            background-image: url({{ URL::asset('Img/sectionbg.png') }});
         }
+
         .wrapper {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
-            margin: 0 20%;
+            margin: 0 10%;
             padding: 20px;
             color: #333;
         }
-
+        header{
+            background-color: #00796b;
+            margin: 20px 0px;
+            width: 100%;
+  
+        }
         /* 標題 */
         h1 {
+            display: inline-block;
+            width: 70%;
             text-align: center;
             color: #2e3d48;
-            padding: 20px 0;
-            background-color: #00796b;
+            padding: 5px 0;
+            
             color: white;
             margin-bottom: 30px;
         }
-
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0px;
+        }
         /* 九宮格容器 */
         .forest-grid {
             display: grid;
@@ -68,21 +82,6 @@
         .forest-entry .divider {
             border-top: 1px solid #eeeeee;
             margin: 15px 0;
-        }
-
-        /* 小螢幕適配 */
-        @media (max-width: 768px) {
-            .forest-grid {
-                grid-template-columns: repeat(2, 1fr);
-                /* 小螢幕顯示兩列 */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .forest-grid {
-                grid-template-columns: 1fr;
-                /* 超小螢幕顯示一列 */
-            }
         }
 
         /* 分頁控制區域 */
@@ -136,10 +135,12 @@
         .pagination button:hover {
             background-color: #004d40;
         }
+
         .button {
+            float: inli;
             padding: 10px 20px;
             font-size: 16px;
-            background-color: #1f7300;
+            background-color: #0992d1;
             color: #fff;
             border: none;
             border-radius: 4px;
@@ -148,16 +149,16 @@
         }
 
         .button:hover {
-            background-color: #185b00;
+            background-color: #0285a5;
         }
     </style>
 </head>
 
 <body>
     <div class="wrapper">
-        <a href="/" class="button">Back to MainPage</a>
-        <h1>🌲已知的造林資料統整🌲</h1>
-
+        <header>
+            <a href="/" class="button">Back to MainPage</a> <h1>🌲已知的造林資料統整🌲 </h1>
+        </header>
         <!-- 九宮格顯示 -->
         <div class="forest-grid">
             @foreach ($forests as $forest)
@@ -196,8 +197,13 @@
             <!-- 顯示分頁的上一頁、下一頁等控制按鈕 -->
             {{ $forests->links() }}
         </div>
-        
-
+        <footer>
+            <p>&copy; 2024 SDGS-15造林資料。
+            資料來源：
+                <a href="https://data.gov.tw/datasets/search?rft=%E5%8F%B0%E7%B3%96%E9%80%A0%E6%9E%97" target="_blank"
+                    style="color: #fff;">台糖造林資料</a> 
+            
+        </footer>
     </div>
 
 </body>

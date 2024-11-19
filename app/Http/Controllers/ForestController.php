@@ -15,7 +15,7 @@ class ForestController extends Controller
     public function index()
     {
         $forests = Forests::paginate(9);
-        return view('Forest.index',compact('forests'));
+        return view('index',compact('forests'));
     }
 
     /**
