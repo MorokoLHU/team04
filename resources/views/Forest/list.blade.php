@@ -33,9 +33,9 @@
                     </tr>
                 </table>
                 <div class="divider"></div>
-                @endforeach
+
             </div>
-        
+        @endforeach
     </div>
     <div class="pagination">
         <!-- 顯示分頁的上一頁、下一頁等控制按鈕 -->

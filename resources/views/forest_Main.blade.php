@@ -20,6 +20,49 @@
             background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
+            overflow: hidden;
+        }
+
+        .leafflake {
+            position: absolute;
+            top: -10px;
+            color: #ffffff;
+            font-size: 24px;
+            user-select: none;
+            pointer-events: none;
+            animation: fall 10s linear infinite, drift 5s ease-in-out infinite;
+            z-index: -2;
+            opacity: 40%;
+            /* 确保雪花背景不会覆盖其他内容 */
+        }
+
+        @keyframes fall {
+            0% {
+                top: -10px;
+            }
+
+            100% {
+                top: 100vh;
+                /* 滑动到页面底部 */
+            }
+        }
+
+        /* 雪花左右漂移动画 */
+        @keyframes drift {
+            0% {
+                transform: translateX(0);
+                /* 从初始位置开始 */
+            }
+
+            50% {
+                transform: translateX(10px);
+                /* 向右漂移，限制漂移范围 */
+            }
+
+            100% {
+                transform: translateX(-10px);
+                /* 向左漂移，限制漂移范围 */
+            }
         }
 
         /* 頁首 */
@@ -28,6 +71,7 @@
             align-items: center;
             padding: 10px 20px;
             background-color: #176902;
+            z-index: 999;
         }
 
         header {
@@ -35,6 +79,7 @@
             font-weight: bold;
             margin-right: auto;
             color: antiquewhite;
+
         }
 
 
@@ -107,6 +152,30 @@
             border-bottom: 2px solid;
             max-width: auto;
         }
+
+        .dense_tree {
+            position: absolute;
+            /* 使用絕對定位 */
+            margin: -58px;
+            width: 16%;
+            height: 16%;
+            transform: scaleY(-1);
+            z-index: -1;
+            
+            /* 讓樹叢圖片保持在內容的下面，不會擋住頁面其他區域 */
+        }
+
+        .left {
+            left: 0;
+            top: 7%;
+            /* 設定離頁面頂部的距離，避免和標籤區域重疊 */
+        }
+
+        .right {
+            right: 0;
+            top: 7%;
+            /* 讓右側的樹叢也同樣避免遮擋頂部區域 */
+        }
     </style>
 </head>
 
@@ -121,7 +190,8 @@
             <a href="forest">🌲林地資料🌲</a>
         </nav>
     </div>
-
+    <img src="{{ URL::asset('Img/densetrees.png') }}" class="dense_tree left">
+    <img src="{{ URL::asset('Img/densetrees.png') }}" class="dense_tree right">
     <!-- 主要內容區域-->
     <div class="main-content">
         <div class="section1">
@@ -144,7 +214,33 @@
             <a href="forest" class="button">點擊查看詳細資訊</a>
         </div>
     </div>
-    
+
 </body>
+<script>
+    // 在页面加载时生成雪花元素
+    let leafflakesCount = 15;
+    for (let i = 0; i < leafflakesCount; i++) {
+        let leafflake = document.createElement('div');
+        leafflake.classList.add('leafflake');
+        leafflake.innerHTML = "🍃";
+
+        // 随机决定雪花生成在左侧10%或右侧10%的位置
+        if (Math.random() < 0.5) {
+            leafflake.style.left = Math.random() * (window.innerWidth * 0.08) + 'px';
+        } else {
+            leafflake.style.left = window.innerWidth * 0.9 + Math.random() * (window.innerWidth * 0.08) + 'px';
+        }
+
+        // 随机设置每个雪花的动画持续时间，制造更自然的效果
+        leafflake.style.animationDuration = Math.random() * 10 + 5 + 's';
+
+        // 随机设置每个雪花的漂移速度
+        leafflake.style.animationDelay = Math.random() * 5 + 's';
+
+        document.body.appendChild(leafflake);
+    }
+</script>
+
+
 
 </html>

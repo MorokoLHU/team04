@@ -160,8 +160,11 @@
         background-color: #2a9249;
         
     }
+    .topbutton{
+      float: right;
+    }
     .button {
-            float: right;
+            
             padding: 10px 20px;
             font-size: 16px;
             background-color: #0992d1;
@@ -171,17 +174,17 @@
             cursor: pointer;
             text-decoration: none;
         }
-
         .button:hover {
             background-color: #0285a5;
         }
+
   </style>
 </head>
 <body>
     <header>
       <img src="{{ URL::asset('Img/SDGS_logo.jpg') }}" height="100%"   >
       
-        <h1>聯合國可持續發展目標 (SDGs) Intro  </h1><a href="/" class="button">Back to MainPage</a>
+        <h1>聯合國可持續發展目標 (SDGs) Intro  </h1><a href="/" class="topbutton button">Back to MainPage</a>
     </header>
     
 <div class="contiar">
@@ -480,9 +483,9 @@
             這是我們自身生存的關鍵。<br><br>
 
             對抗沙漠化，終止及逆轉土地劣化，並遏止生物多樣性的喪失。<br><br>
-
-
-          </p>  
+          </p> 
+            Team04我們所製作：<a href="/forest" class=" button">關於台灣林地資訊</a>
+           
         </div>
       </div>
 

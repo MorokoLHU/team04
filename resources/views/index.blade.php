@@ -23,7 +23,14 @@
             background-color: #00796b;
             margin: 20px 0px;
             width: 100%;
+            text-align: center;
+            margin-bottom: 0;
   
+        }
+        .Menu{
+            background-color: #333;
+            padding: 15px;
+
         }
         /* 標題 */
         h1 {
@@ -36,6 +43,7 @@
             color: white;
             margin-bottom: 30px;
         }
+
         footer {
             background-color: #333;
             color: #fff;
@@ -141,9 +149,9 @@
             float: inli;
             padding: 10px 20px;
             font-size: 16px;
-            background-color: #0992d1;
-            color: #fff;
-            border: none;
+            border-bottom: 5px solid green;
+            color: #f8f1b5;
+          
             border-radius: 4px;
             cursor: pointer;
             text-decoration: none;
