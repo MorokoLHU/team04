@@ -1,4 +1,4 @@
-@extends('index')
+@extends('app')
 
 @section('title', 'SDGS造林資料')
 
