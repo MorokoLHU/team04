@@ -15,7 +15,7 @@ class ForestControlles extends Controller
     public function index()
     {
         $forests = Frost::all();
-        return view('forest',compact('forests'));
+        return view('list',compact('forests'));
     }
 
     /**
