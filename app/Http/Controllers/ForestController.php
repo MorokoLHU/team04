@@ -15,7 +15,7 @@ class ForestController extends Controller
     public function index()
     {
         $forests = Forests::paginate(9);
-        return view('Forest.list', ['forests' => $forests]);
+        return view('Forest.list')->with('forests' , value : $forests);
     }
 
     /**
@@ -47,6 +47,9 @@ class ForestController extends Controller
      */
     public function show($id)
     {
+
+        $forest = Forests::findOrFail($id);
+        return view('Forest.show')->with('forest' , value : $forest);
         //
     }
 
@@ -58,7 +61,10 @@ class ForestController extends Controller
      */
     public function edit($id)
     {
-        //
+        parent::edit($id);
+
+        $forest = Forests::findOrFail($id);
+        return view('Forest.edit',['forest' =>$forest]);
     }
 
     /**
@@ -81,6 +87,9 @@ class ForestController extends Controller
      */
     public function destroy($id)
     {
+        $forest = Forests::findOrFail($id);
+        $forest->delete();
+        return redirect('/forest');
         //
     }
 }

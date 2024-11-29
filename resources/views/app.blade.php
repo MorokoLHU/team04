@@ -146,7 +146,7 @@
         }
 
         .button {
-            float: inli;
+            float:inherit;
             padding: 10px 20px;
             font-size: 16px;
             border-bottom: 5px solid green;
@@ -159,6 +159,31 @@
 
         .button:hover {
             background-color: #0285a5;
+        }
+        .optionA{
+            text-decoration:none;
+            color: #848afa;
+            border-bottom: 5px solid rgb(227, 236, 227);
+
+        }
+        .show{
+            text-align: left;
+
+        }
+        .show th{
+            padding-left: 4px;
+            
+        }
+        .formA{
+            display: inline;
+            
+        }
+        .formA input{
+            border-top:0; 
+            border-left: 0;
+            border-right: 0;
+            background-color: transparent;
+            
         }
     </style>
 </head>

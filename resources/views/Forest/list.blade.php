@@ -31,9 +31,19 @@
                         <th><strong>總面積 (公頃):</strong></th>
                         <th> {{ $forest->total_area_hectares }}</th>
                     </tr>
+                    
+                
                 </table>
                 <div class="divider"></div>
-
+                <td><strong><a class="optionA button" href="{{ route('Forest.show', ['id'=>$forest->id]) }}">顯示</a></strong></td>
+                <td><strong><a class="optionA button" href="{{ route('Forest.edit', ['id'=>$forest->id]) }}">修改</a></strong></td>
+                <td>
+                    <form class="formA" action="{{ url('/forest/delete', ['id'=>$forest->id])  }}" method = "post">
+                        <input class="optionA button " type="submit" value="刪除" >
+                        @method('delete')
+                        @csrf 
+                    </form>
+                </td>
             </div>
         @endforeach
     </div>

@@ -6,7 +6,7 @@
 </header>
 <nav class="Menu">
     <a href="/" class="button">Back to MainPage</a>
-    <a href="/" class="button">list</a>
+    <a href="/forest" class="button">list</a>
     <a href="/" class="button">creat</a>
     <a href="/" class="button">show</a>
  </nav>
