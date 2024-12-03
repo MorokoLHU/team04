@@ -25,6 +25,8 @@ in<!DOCTYPE html>
             margin: 40px 0;
             font-weight: bold;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            background-color: #ffffff;
+
         }
 
         /* 表格容器設置 */

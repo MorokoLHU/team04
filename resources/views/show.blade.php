@@ -16,7 +16,6 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($forests as $forest)
             <tr>
                 <td>{{ $forest->farm_name }}</td>
                 <td>{{ $forest->plain_forest_area_hectares }}</td>
@@ -24,19 +23,7 @@
                 <td>{{ $forest->self_funded_forest_area_hectares }}</td>
                 <td>{{ $forest->eco_forest_park_area_hectares }}</td>
                 <td>{{ $forest->total_area_hectares }}</td>
-                <td><a href={{ route('show', ['id'=> $forest -> id]) }}>"顯示"</a></td>
-
-                <td><a href="{{ route('edit',['id'=>$forest->farm_name])}}">"修改"</a></td>
-                <td>
-                    <form action="{{ url('/forest/delete', ['id' => $forest->id]) }}" method="post">
-                        <input class="bth bth-default" type="submit" value="刪除" />
-                        @method('delete')
-                        @csrf
-                    </form>
-                </td>
-
                 </tr>
-            @endforeach
         </tbody>
     </table>
 </div>

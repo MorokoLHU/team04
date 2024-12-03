@@ -21,4 +21,7 @@ Route::get('/sdgs', function () {
     return view('intro_sdgs');
 });
 
-Route::get('forest',[ForestControlles::class,'index']) ;
+Route::get('forest',[ForestControlles::class,'index'])->name('forest.index') ;
+Route::get('forest/{id}',[ForestControlles::class,'show'])->name('show') ;
+Route::get('forest/edit/{id}',[ForestControlles::class,'edit'])->name('edit') ;
+Route::delete('forest/delete/{id}',[ForestControlles::class,'destroy'])->where('id','[0-9]+')->name('destroy');

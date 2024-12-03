@@ -47,7 +47,8 @@ class ForestControlles extends Controller
      */
     public function show($id)
     {
-        //
+        $forest = Frost::findOrFail($id);
+        return view('show')->with('forest',$forest);
     }
 
     /**
@@ -81,6 +82,8 @@ class ForestControlles extends Controller
      */
     public function destroy($id)
     {
-        //
+        $forest = Frost::findOrFail($id);
+        $forest ->delete();
+        return redirect('/forest');
     }
 }
