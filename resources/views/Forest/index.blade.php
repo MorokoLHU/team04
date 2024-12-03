@@ -39,7 +39,7 @@
                 <td><strong><a class="optionA button" href="{{ route('Forest.edit', ['id'=>$forest->id]) }}">修改</a></strong></td>
                 <td>
                     <form class="formA" action="{{ url('/forest/delete', ['id'=>$forest->id])  }}" method = "post">
-                        <input class="optionA button " type="submit" value="刪除" >
+                        <input class="optionA button "  type="submit" value="刪除" >
                         @method('delete')
                         @csrf 
                     </form>

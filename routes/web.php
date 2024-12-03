@@ -26,5 +26,5 @@ Route::get('/forest', [ForestController::class,'index']);
 
 Route::get('/forest/{id}', [ForestController::class, 'show'])->where('id', '[0-9]+')->name('Forest.show');
     // 修改表單
-Route::get('/forest/edit/{id}', [ForestController::class, 'edit'])->where('id', '[0-9]+')->name('Forest.edit');
+Route::get('/forest/{id}/edit', [ForestController::class, 'edit'])->where('id', '[0-9]+')->name('Forest.edit');
 Route::delete('/forest/delete/{id}', [ForestController::class, 'destroy'])->where('id', '[0-9]+')->name('Forest.destroy');
