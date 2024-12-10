@@ -15,7 +15,7 @@ class ForestController extends Controller
     public function index()
     {
         $forests = Forests::paginate(9);
-        return view('Forest.index')->with('forests' , value : $forests);
+        return view('Forest.index')->with('forests', $forests);
     }
 
     /**
@@ -25,7 +25,8 @@ class ForestController extends Controller
      */
     public function create()
     {
-        //
+
+        return view("Forest.create");
     }
 
     /**
@@ -36,7 +37,16 @@ class ForestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $data =  $request ->only([
+        'farm_name',
+        'plain_forest_area_hectares',
+        'public_forest_area_hectares',
+        'self_funded_forest_area_hectares',
+        'eco_forest_park_area_hectares',
+        'total_area_hectares'
+       ]);
+       $forest = Forests::create($data);
+       return redirect('/forest');
     }
 
     /**
@@ -49,7 +59,7 @@ class ForestController extends Controller
     {
 
         $forest = Forests::findOrFail($id);
-        return view('Forest.show')->with('forest' , value : $forest);
+        return view('Forest.show')->with('forest' ,$forest);
         //
     }
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title','SDGS-15造林資訊')</title>
+    <title>@yield('title', 'SDGS-15造林資訊')</title>
 
     <style>
         /* 通用樣式 */
@@ -19,19 +19,22 @@
             padding: 20px;
             color: #333;
         }
-        header{
+
+        header {
             background-color: #00796b;
             margin: 20px 0px;
             width: 100%;
             text-align: center;
             margin-bottom: 0;
-  
+
         }
-        .Menu{
+
+        .Menu {
             background-color: #333;
             padding: 15px;
 
         }
+
         /* 標題 */
         h1 {
             display: inline-block;
@@ -39,7 +42,7 @@
             text-align: center;
             color: #2e3d48;
             padding: 5px 0;
-            
+
             color: white;
             margin-bottom: 30px;
         }
@@ -51,6 +54,7 @@
             text-align: center;
             margin: 20px 0px;
         }
+
         /* 九宮格容器 */
         .forest-grid {
             display: grid;
@@ -146,12 +150,12 @@
         }
 
         .button {
-            float:inherit;
+            float: inherit;
             padding: 10px 20px;
             font-size: 16px;
             border-bottom: 5px solid green;
             color: #f8f1b5;
-          
+
             border-radius: 4px;
             cursor: pointer;
             text-decoration: none;
@@ -160,46 +164,79 @@
         .button:hover {
             background-color: #0285a5;
         }
-        .optionA{
-            text-decoration:none;
+
+        .optionA {
+            text-decoration: none;
             color: #848afa;
             border-bottom: 5px solid rgb(227, 236, 227);
 
         }
-        .show{
+
+        .show {
             text-align: left;
 
         }
-        .show th{
+
+        .show th {
             padding-left: 4px;
-            
+
         }
-        .formA{
+
+        .formA {
             display: inline;
-            
+
         }
-        .formA input{
-            border-top:0; 
+
+        .formA input {
+            border-top: 0;
             border-left: 0;
             border-right: 0;
             background-color: transparent;
-            
+
+        }
+
+        .form-control {
+            width: 50%;
+            height: calc(1.5em + 0.75rem + 2px);
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            display: block;
+            box-sizing: border-box;
+        }
+
+        .form-control:focus {
+            color: #495057;
+            background-color: #fff;
+            border-color: #80bdff;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+        }
+
+        .form-control:disabled {
+            background-color: #e9ecef;
+            border-color: #ccc;
+            cursor: not-allowed;
         }
     </style>
 </head>
 
 <body>
-   
+
     <div class="wrapper">
         @include('Forest.header')
-        
+
         <div>
-        @yield('Forest_content')
+            @yield('Forest_content')
         </div>
- 
+
         @include('Forest.footer')
     </div>
-    
+
 </body>
 
 </html>
