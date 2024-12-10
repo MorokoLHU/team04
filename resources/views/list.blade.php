@@ -14,6 +14,7 @@
                 <th>生態森林公園面積 (公頃)</th>
                 <th>總面積 (公頃)</th>
             </tr>
+            <th><a href="/forest/create" class="button">create</a></th>
         </thead>
         <tbody>
             @foreach ($forests as $forest)
@@ -34,7 +35,7 @@
                         @csrf
                     </form>
                 </td>
-
+                
                 </tr>
             @endforeach
         </tbody>

@@ -1,5 +1,7 @@
-in<!DOCTYPE html>
+in
+<!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,7 +51,8 @@ in<!DOCTYPE html>
             border-radius: 8px;
         }
 
-        th, td {
+        th,
+        td {
             padding: 14px;
             text-align: left;
             border: 1px solid #ddd;
@@ -84,25 +87,62 @@ in<!DOCTYPE html>
 
         /* 響應式設計 */
         @media (max-width: 768px) {
-            th, td {
+
+            th,
+            td {
                 padding: 10px;
                 font-size: 14px;
             }
         }
+
+        .white-bg {
+            width: 30%;
+            font-weight: bold;
+            display: block;
+            background-color: white;
+            /* 設置背景為白色 */
+            border: 1px solid #ccc;
+            /* 可選：為表單欄位加一條淡灰色邊框 */
+            color: black;
+            /* 可選：設定文字顏色 */
+            padding: 10px;
+            /* 可選：設定內距 */
+            border-radius: 5px;
+            /* 可選：讓邊角稍微圓潤 */
+        }
+
+        .bg {
+            width: 30%;
+            background-color: #d4f4dd;
+            /* 設置背景為淺綠色 */
+            color: black;
+            /* 文字顏色為黑色 */
+            font-weight: bold;
+            /* 文字設置為粗體 */
+            padding: 10px;
+            /* 添加內邊距 */
+            border-radius: 5px;
+            /* 邊角圓潤效果 */
+            display: inline-block;
+            /* 確保背景只影響文字大小 */
+        }
     </style>
+
 </head>
+
 <body>
 
-<div>
-    <div class="p-6 border-light-100:">
-        @include('head')
+    <div>
+        <div class="p-6 border-light-100:">
+            @include('head')
+        </div>
+        <div class="p-6 border-t border-gray-200 dark:broder-gray-700 md:broder-t-0 md:border-1">
+            @yield('forest_theme')
+        </div>
+        <div class="p-6 border-t border-gray-200 dark:broder-gray-700 md:broder-t-0 md:border-1">
+            @include('footer')
+        </div>
     </div>
-    <div class="p-6 border-t border-gray-200 dark:broder-gray-700 md:broder-t-0 md:border-1">
-        @yield('forest_theme')
-    </div>
-    <div class="p-6 border-t border-gray-200 dark:broder-gray-700 md:broder-t-0 md:border-1">
-        @include('footer')
-    </div>
-</div>
 </body>
+
 </html>

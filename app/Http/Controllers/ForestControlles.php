@@ -25,7 +25,7 @@ class ForestControlles extends Controller
      */
     public function create()
     {
-        //
+        return view("create");//
     }
 
     /**
@@ -36,7 +36,16 @@ class ForestControlles extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request -> only([
+            'farm_name',
+            'plain_forest_area_hectares',
+            'public_forest_area_hectares',
+            'self_funded_forest_area_hectares',
+            'eco_forest_park_area_hectares',
+            'total_area_hectares',
+        ]);
+        $forest = Frost::create($data);
+        return redirect('/forest');
     }
 
     /**
