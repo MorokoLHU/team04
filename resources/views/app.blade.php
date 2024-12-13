@@ -195,6 +195,14 @@
 
         }
 
+        .form-group input:valid {
+            border: 2px solid green;
+        }
+
+        .form-group input:invalid {
+            border: 2px solid rgb(255, 224, 224);
+        }
+
         .form-control {
             width: 50%;
             height: calc(1.5em + 0.75rem + 2px);

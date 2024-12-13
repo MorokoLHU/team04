@@ -37,6 +37,7 @@ class ForestController extends Controller
      */
     public function store(Request $request)
     {
+        
        $data =  $request ->only([
         'farm_name',
         'plain_forest_area_hectares',
