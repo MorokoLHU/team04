@@ -25,7 +25,7 @@ class ForestControlles extends Controller
      */
     public function create()
     {
-        return view("create");//
+        return view('create');
     }
 
     /**
@@ -68,7 +68,8 @@ class ForestControlles extends Controller
      */
     public function edit($id)
     {
-        //
+        $forest = Frost::findOrFail($id);
+        return view('edit')->with('forest',$forest);
     }
 
     /**
@@ -80,7 +81,18 @@ class ForestControlles extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $forest = Frost::findOrFail($id);
+        $data = $request -> only([
+            'farm_name',
+            'plain_forest_area_hectares',
+            'public_forest_area_hectares',
+            'self_funded_forest_area_hectares',
+            'eco_forest_park_area_hectares',
+            'total_area_hectares',
+        ]);
+        $forest ->fill($data);
+        $forest ->save();
+    return redirect('/forest');
     }
 
     /**

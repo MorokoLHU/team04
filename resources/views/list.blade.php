@@ -13,8 +13,9 @@
                 <th>自籌資金森林面積 (公頃)</th>
                 <th>生態森林公園面積 (公頃)</th>
                 <th>總面積 (公頃)</th>
+                <th><a href="/forest/create" class="button">創建(自訂表格) </a></th>
             </tr>
-            <th><a href="/forest/create" class="button">create</a></th>
+            
         </thead>
         <tbody>
             @foreach ($forests as $forest)
@@ -27,7 +28,7 @@
                 <td>{{ $forest->total_area_hectares }}</td>
                 <td><a href={{ route('show', ['id'=> $forest -> id]) }}>"顯示"</a></td>
 
-                <td><a href="{{ route('edit',['id'=>$forest->farm_name])}}">"修改"</a></td>
+                <td><a href="{{ route('edit',['id'=>$forest->id])}}">"修改"</a></td>
                 <td>
                     <form action="{{ url('/forest/delete', ['id' => $forest->id]) }}" method="post">
                         <input class="bth bth-default" type="submit" value="刪除" />
