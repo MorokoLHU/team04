@@ -72,10 +72,10 @@ class ForestController extends Controller
      */
     public function edit($id)
     {
-        parent::edit($id);
+       
 
         $forest = Forests::findOrFail($id);
-        return view('Forest.edit',['forest' =>$forest]);
+        return view('Forest.edit')->with('forest' ,$forest);
     }
 
     /**
@@ -87,7 +87,18 @@ class ForestController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $forest = Forests::findOrFail($id);
+        $data =  $request ->only([
+            'farm_name',
+            'plain_forest_area_hectares',
+            'public_forest_area_hectares',
+            'self_funded_forest_area_hectares',
+            'eco_forest_park_area_hectares',
+            'total_area_hectares'
+           ]);
+           $forest ->fill($data);
+           $forest -> save();
+        return redirect('/forest');
     }
 
     /**
