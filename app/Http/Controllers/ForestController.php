@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\CreateForestRequest;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 use App\Models\Forests;
 
 class ForestController extends Controller
@@ -35,7 +36,7 @@ class ForestController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateForestRequest $request)
     {
         
        $data =  $request ->only([
@@ -46,7 +47,7 @@ class ForestController extends Controller
         'eco_forest_park_area_hectares',
         'total_area_hectares'
        ]);
-       $forest = Forests::create($data);
+       $forest = Forests::create(attributes: $data);
        return redirect('/forest');
     }
 

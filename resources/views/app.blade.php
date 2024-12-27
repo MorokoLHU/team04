@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'SDGS-15造林資訊')</title>
 
@@ -229,6 +230,19 @@
             background-color: #e9ecef;
             border-color: #ccc;
             cursor: not-allowed;
+        }
+        .alert-danger {
+            float: right;
+            
+            background-color: #f8d7da;
+            
+            color: #531118;
+            font-size: 20px;
+            border-color: #f78590;
+            padding: 10px;
+            border-radius: 5px;
+
+            margin-top: 20px;
         }
     </style>
 </head>

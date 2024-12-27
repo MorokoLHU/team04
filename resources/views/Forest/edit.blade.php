@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'SDGS造林資料')
+@section('title', '修改SDGS造林資料')
 
 @section('Forest_content')
 
