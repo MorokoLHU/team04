@@ -126,6 +126,14 @@ in
             display: inline-block;
             /* 確保背景只影響文字大小 */
         }
+        .alert-danger {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            padding: 10px;
+            width: 30%;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
     </style>
 
 </head>

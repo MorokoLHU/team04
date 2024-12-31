@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\CreateForestRequest;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 use App\Models\Frost;
 
 class ForestControlles extends Controller
@@ -34,7 +35,7 @@ class ForestControlles extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateForestRequest $request)
     {
         $data = $request -> only([
             'farm_name',
@@ -79,7 +80,7 @@ class ForestControlles extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateForestRequest $request, $id)
     {
         $forest = Frost::findOrFail($id);
         $data = $request -> only([
