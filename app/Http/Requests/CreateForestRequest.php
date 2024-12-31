@@ -46,7 +46,7 @@ class CreateForestRequest extends FormRequest
                 'public_forest_area_hectares.required' => '全民造林面積公頃 必填',
                 'public_forest_area_hectares.numeric' => '全民造林面積公頃 僅接受數字',
 
-                'public_forest_area_hectares.max' => '全民造林面積公頃 僅接受數字',
+                'public_forest_area_hectares.max' => '全民造林面積公頃 請小於1000公頃',
                 
                 'self_funded_forest_area_hectares.required' => '自費造林面積公頃 必填',
                 'self_funded_forest_area_hectares.numeric' => '自費造林面積公頃 僅接受數字',
