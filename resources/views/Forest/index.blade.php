@@ -36,6 +36,7 @@
                 </table>
                 <div class="divider"></div>
                 <td><strong><a class="optionA button" href="{{ route('Forest.show', ['id'=>$forest->id]) }}">顯示</a></strong></td>
+                
                 <td><strong><a class="optionA button" href="{{ route('Forest.edit', ['id'=>$forest->id]) }}">修改</a></strong></td>
                 <td>
                     <form class="formA" action="{{ url('/forest/delete', ['id'=>$forest->id])  }}" method = "post">

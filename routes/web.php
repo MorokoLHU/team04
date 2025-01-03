@@ -31,8 +31,11 @@ Route::delete('/forest/delete/{id}', [ForestController::class, 'destroy'])->wher
 
 Route::patch('forest/update/{id}', [ForestController::class, 'update'])->name('forest.update');
 
-Route::get('/forest/create', [ForestController::class, 'create'])->name('Forest.create');
+Route::get('/forest/create', [ForestController::class, 'create'])->name('Forest.create')->middleware('can:admin');
 
 Route::post('forest/store', [ForestController::class, 'store'])->name('Forest.store');
 
-Route::get('forest/{id}/edit', [ForestController::class, 'edit'])->where('id', '[0-9]+')->name('Forest.edit');
+Route::get('forest/{id}/edit', [ForestController::class, 'edit'])->where('id', '[0-9]+')->name('Forest.edit')->middleware('can:manger');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

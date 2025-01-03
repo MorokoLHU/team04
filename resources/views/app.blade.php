@@ -6,6 +6,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'SDGS-15造林資訊')</title>
+    <!-- Scripts -->
 
     <style>
         /* 通用樣式 */
