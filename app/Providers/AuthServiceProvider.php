@@ -32,11 +32,16 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('manager', function ($user) {
             return $user->role === User::ROLE_MANAGER;
         });
+        
+        Gate::define('edit-forest', function ($user) {
+            return $user->role === User::ROLE_MANAGER || $user->role === User::ROLE_ADMIN;
+        });
 
         // 一般使用者 Gate 規則
         Gate::define('user', function ($user) {
             return $user->role === User::ROLE_USER;
         }); 
+
         $this->registerPolicies();
 
         //

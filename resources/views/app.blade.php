@@ -15,6 +15,7 @@
         }
 
         .wrapper {
+            
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
             margin: 0 10%;
@@ -152,12 +153,11 @@
         }
 
         .button {
-            float: inherit;
+         
             padding: 10px 20px;
             font-size: 16px;
             border-bottom: 5px solid green;
             color: #f8f1b5;
-
             border-radius: 4px;
             cursor: pointer;
             text-decoration: none;
@@ -245,14 +245,21 @@
 
             margin-top: 20px;
         }
+        .AccountINFO{
+            display: inline-block;
+            color: #f8f1b5;
+            background-color: #333;
+            
+        }
     </style>
 </head>
 
 <body>
 
     <div class="wrapper">
+        
         @include('Forest.header')
-
+    
         <div>
             @yield('Forest_content')
         </div>
