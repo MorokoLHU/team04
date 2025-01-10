@@ -23,8 +23,11 @@ Route::get('/sdgs', function () {
 
 Route::get('forest',[ForestControlles::class,'index'])->name('forst.index');
 Route::get('forest/{id}',[ForestControlles::class,'show'])->name('show')->where('id','[0-9]+');
-Route::get('forest/edit/{id}',[ForestControlles::class,'edit'])->name('edit') ;
-Route::delete('forest/delete/{id}',[ForestControlles::class,'destroy'])->where('id','[0-9]+')->name('destroy');
-Route::get('forest/create',[ForestControlles::class,'create']) -> name('create');
+Route::get('forest/edit/{id}',[ForestControlles::class,'edit'])->name('edit')->middleware('can:edit-forest') ;
+Route::delete('forest/delete/{id}',[ForestControlles::class,'destroy'])->where('id','[0-9]+')->name('destroy')->middleware('can:admin' );
+Route::get('forest/create',[ForestControlles::class,'create']) -> name('create')->middleware('can:admin' );
 Route::post('forest/store',[ForestControlles::class,'store'])->name('store');
 Route::patch('forest/update/{id}',[ForestControlles::class,'update'])->name('update');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
