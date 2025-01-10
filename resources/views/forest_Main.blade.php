@@ -12,7 +12,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        /**/
         /* 網頁背景 */
         body {
             background-image: url("{{ URL::asset('Img/sectionbg.png') }}");
